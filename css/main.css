@@ -23,7 +23,6 @@ input {
 }
 
 .btn-my-location {
-  flex-grow: 0.5;
   margin-left: 10px;
 }
 
@@ -40,6 +39,13 @@ input {
   background-color: #777;
 }
 
+.location-info {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .location-info p {
   font-size: 1.2rem;
   font-weight: bold;
@@ -48,7 +54,7 @@ input {
 .main-container {
   margin: 0 auto;
   display: grid;
-  /* grid-template-columns: repeat(auto-fill, 1fr); */
+  grid-gap: 15px;
   grid-template-rows: 1fr 2fr;
   grid-template-columns: 1fr 1fr;
 }
@@ -74,17 +80,8 @@ input {
   }
 
   .location-info {
-    display: flex;
     justify-content: space-around;
     align-items: center;
-  }
-
-  .btn-copy-location {
-    width: 130px;
-  }
-
-  .btn-my-location {
-    flex-grow: none;
   }
 
   .main-container {
