@@ -1,3 +1,5 @@
+import { locService } from './loc.service.js';
+
 export const mapService = {
   initMap,
   addMarker,
@@ -55,7 +57,9 @@ function pickLocation() {
       JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
     );
     infoWindow.open(gMap);
+    locService.createLocation(mapsMouseEvent.latLng.toJSON().lat, mapsMouseEvent.latLng.toJSON().lng)
   });
+
 }
 
 function _connectGoogleApi() {
