@@ -1,3 +1,4 @@
+import { renderLocationTable } from '../app.controller';
 import { locService } from './loc.service.js';
 
 export const mapService = {
@@ -11,7 +12,6 @@ var gMap;
 
 function initMap() {
   const myLatlng = { lat: 32.0749831, lng: 34.9120554 };
-
   console.log('InitMap');
 
   return _connectGoogleApi().then(() => {
@@ -57,9 +57,11 @@ function pickLocation() {
       JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
     );
     infoWindow.open(gMap);
-    locService.createLocation(mapsMouseEvent.latLng.toJSON().lat, mapsMouseEvent.latLng.toJSON().lng)
+    locService.createLocation(
+      mapsMouseEvent.latLng.toJSON().lat,
+      mapsMouseEvent.latLng.toJSON().lng
+    );
   });
-
 }
 
 function _connectGoogleApi() {

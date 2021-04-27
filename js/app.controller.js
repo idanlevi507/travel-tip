@@ -1,6 +1,9 @@
 import { locService } from './services/loc.service.js';
 import { mapService } from './services/map.service.js';
 
+export const controller = {
+  renderLocationTable,
+};
 
 window.onload = onInit;
 
@@ -50,4 +53,11 @@ function getPosition() {
   return new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(resolve, reject);
   });
+}
+
+function renderLocationTable() {
+  let elTable = document.querySelector('.location-table');
+  let strHTML = '';
+
+  elTable.innerHTML = strHTML;
 }
