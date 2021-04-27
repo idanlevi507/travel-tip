@@ -9,6 +9,7 @@ function onInit() {
     .initMap()
     .then(() => {
       console.log('Map is ready');
+      mapService.pickLocation();
     })
     .catch(() => console.log('Error: cannot init map'));
 }
