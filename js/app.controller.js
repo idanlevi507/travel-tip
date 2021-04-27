@@ -57,7 +57,10 @@ function getPosition() {
 
 function renderLocationTable() {
   let elTable = document.querySelector('.location-table');
+  let locs = locService.getLocs();
+  let loc = locs[locs.length - 1];
+  console.log('locs', locs);
   let strHTML = '';
-
+  console.log('renderLocationTable');
   elTable.innerHTML = strHTML;
 }

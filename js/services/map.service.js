@@ -1,5 +1,5 @@
-import { renderLocationTable } from '../app.controller';
 import { locService } from './loc.service.js';
+import { controller } from '../app.controller.js';
 
 export const mapService = {
   initMap,
@@ -61,6 +61,8 @@ function pickLocation() {
       mapsMouseEvent.latLng.toJSON().lat,
       mapsMouseEvent.latLng.toJSON().lng
     );
+
+    // controller.renderLocationTable(lat,lng);
   });
 }
 
